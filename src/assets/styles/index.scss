@@ -1,0 +1,280 @@
+body {
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	padding: 20px 0;
+	.logo {
+		@media screen and (min-width: 768px) {
+			margin: 0 25px;
+		}
+		@media screen and (min-width: 1024px) {
+			margin: 0 50px;
+		}
+		img {
+			max-width: 150px;
+		}
+	}
+	nav {
+		display: none;
+		ul {
+			padding: 0;
+			list-style: none;
+			display: flex;
+
+			@media screen and (min-width: 768px) {
+				gap: 25px;
+			}
+			@media screen and (min-width: 1024px) {
+				gap: 50px;
+			}
+			li {
+				a {
+					color: #000000;
+					text-decoration: none;
+				}
+			}
+		}
+		@media screen and (min-width: 768px) {
+			display: flex;
+		}
+	}
+}
+
+.hero {
+	background-image: url('../img/los-cocos-room-header-2-x.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 50px 0;
+	.filter {
+		background-color: rgba(96, 156, 224, 0.5);
+		padding: 30px 0;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		gap: 10px;
+		@media screen and (min-width: 768px) {
+			flex-direction: row;
+			justify-content: center;
+			align-items: stretch;
+		}
+		.react-datepicker-wrapper {
+			.react-datepicker__input-container {
+				input {
+					padding: 10px;
+					width: 90px;
+					border: none;
+					&:focus {
+						border: none;
+						outline: none;
+					}
+				}
+			}
+		}
+		select {
+			height: 35px;
+			width: 110px;
+		}
+		button.modify {
+			min-height: 35px;
+			width: 110px;
+			text-align: center;
+			font-weight: 700;
+			border: 0;
+			background-color: #2868ad;
+			color: #ffffff;
+			cursor: pointer;
+		}
+	}
+}
+
+section.container {
+	margin: 0 auto;
+	width: 90%;
+	max-width: 1440px;
+	justify-content: center;
+	display: flex;
+	gap: 50px;
+	flex-wrap: wrap;
+	@media screen and (min-width: 1280px) {
+		flex-wrap: nowrap;
+	}
+	.rooms {
+		flex: 0 0 100%;
+		@media screen and (min-width: 1280px) {
+			flex: 0 0 70%;
+		}
+	}
+	.summary {
+		flex: 0 0 100%;
+		@media screen and (min-width: 1280px) {
+			flex: 0 0 30%;
+		}
+	}
+	&.steps {
+		flex-direction: column;
+		justify-content: flex-start;
+		padding: 50px 20px;
+		gap: 0px;
+
+		@media screen and (min-width: 1280px) {
+			padding: 50px 200px;
+		}
+		img {
+			max-width: 250px;
+			margin-top: 20px;
+			@media screen and (min-width: 1280px) {
+				max-width: 350px;
+			}
+		}
+	}
+}
+
+.room {
+	border: 1px solid rgba(128, 128, 128, 0.32);
+	background: rgba(128, 128, 128, 0.06);
+	padding: 30px;
+	cursor: pointer;
+	&:hover,
+	&.active {
+		box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.18);
+	}
+	.content {
+		display: flex;
+		flex-direction: column;
+		@media screen and (min-width: 1280px) {
+			flex-direction: row;
+		}
+		> img {
+			@media screen and (min-width: 1280px) {
+				margin-left: -60px;
+			}
+		}
+		.data {
+			padding: 20px;
+			.size {
+				margin-top: 50px;
+				margin-bottom: 30px;
+			}
+			.options {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-end;
+				&-room {
+					display: flex;
+					gap: 50px;
+					align-items: flex-end;
+					img {
+						display: block;
+						margin-bottom: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+section.summary {
+	position: relative;
+	&:before {
+		content: '';
+		background-image: url(../img/los-cocos-img-bg.png);
+		position: absolute;
+		width: 100%;
+		height: 228px;
+		background-repeat: no-repeat;
+		top: 0;
+		transform: translate(-50%, -100%);
+		left: 50%;
+		background-size: cover;
+		display: none;
+		@media screen and (min-width: 1280px) {
+			display: block;
+		}
+	}
+	.content {
+		padding: 20px;
+		border: 1px solid rgba(128, 128, 128, 0.32);
+		background: rgba(128, 128, 128, 0.06);
+		.info {
+			border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+			padding-bottom: 20px;
+			&-check {
+				display: flex;
+				gap: 30px;
+				margin-bottom: 20px;
+			}
+			&-date {
+				margin-bottom: 20px;
+			}
+			h4 {
+				margin: 0;
+			}
+			p {
+				margin: 0;
+			}
+		}
+		.total {
+			padding-top: 15px;
+			.price {
+				display: flex;
+				justify-content: space-between;
+			}
+			button {
+				margin-top: 40px;
+				min-height: 45px;
+				width: 100%;
+				text-align: center;
+				font-weight: 700;
+				border: 0;
+				background-color: #2868ad;
+				color: #ffffff;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+footer {
+	margin-top: 50px;
+	border-top: 1px solid rgba(128, 128, 128, 0.5);
+	display: flex;
+	padding: 30px;
+	flex-wrap: wrap;
+	justify-content: center;
+	@media screen and (min-width: 1024px) {
+		justify-content: space-between;
+	}
+	.footer-left,
+	.footer-right {
+		display: flex;
+		gap: 15px;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		@media screen and (min-width: 1024px) {
+			flex-direction: row;
+		}
+	}
+	ul {
+		list-style: none;
+		display: flex;
+		padding: 0;
+		gap: 15px;
+	}
+	.footer-right {
+		p {
+			color: #2868ad;
+		}
+		img {
+			margin-left: 20px;
+		}
+	}
+	img {
+		height: 40px;
+	}
+}
